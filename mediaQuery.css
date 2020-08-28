@@ -1,0 +1,170 @@
+@media screen and (max-width: 1000px) {
+    #borderCountries {
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 880px) {
+    #backBtnButton {
+        width: 15%;
+        padding: 0.3rem 1.5rem;
+    }
+
+    #border-header {
+        width: 50%;
+    }
+
+}
+
+@media screen and (max-width: 800px) {
+    .info {
+        margin: 0 0;
+    }
+
+    .fullDetailsDiv {
+        height: 40vh;
+    }
+
+    #endOfCountryInfo {
+        bottom: 0;
+    }
+
+    #regionsForm {
+        width: 20%;
+        margin-right: 1rem;
+    }
+}
+
+
+@media screen and (max-width: 700px) {
+    .col-3 {
+      flex: 0 0 50%;
+      max-width: 50%;
+    }
+
+    .dark-mode {
+        width: 25%;
+    }
+
+    .search-and-select {
+        margin-left: 1rem;
+    }
+
+    #regionsForm {
+        margin-right: 1.5rem;
+        padding: 0.3rem;
+    }
+
+    #backBtnButton {
+        width: 15%;
+        padding: 0.4rem 1.1rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .welcome {
+        padding: 0;
+    }
+
+    .header-text h1 {
+        font-size: 1.7rem;
+    }
+
+    .dark-mode {
+        width: 30%;
+    }
+
+    #regionsForm {
+        width: 25%;
+    }
+}
+
+@media screen and (max-width: 470px) {
+  
+    .header-text h1 {
+        font-size: 1.1rem;
+    }
+
+    .dark-mode p {
+        font-size: 0.7rem;
+    }
+
+    .search-and-select {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        align-items: flex-start;
+        width: 77%;
+        margin: 3rem auto;
+    }
+
+    #formSearch {
+        width: 95%;
+    }
+
+    #regionsForm {
+        width: 60%;
+        padding: 1rem 1.4rem;
+    }
+
+    .col-3 {
+        flex: 0 0 90%;
+        max-width: 90%;
+        margin: auto;
+    }
+
+    .fullDetailsDiv {
+        flex-direction: column;
+    }
+
+    #bigFlag {
+        width: 100%;
+        justify-content: space-between;
+        margin-bottom: 3rem;
+    }
+
+    .info {
+        width: 100%;
+    }
+
+    .info h2 {
+        font-size: 1.7rem;
+    }
+
+    .info p {
+        font-size: 0.8rem;
+    }
+
+    .country-details {
+        flex-direction: column;
+    }
+
+    #endOfCountryInfo {
+        position: relative;
+    }
+
+    #borderDiv {
+        flex-direction: column;
+    }
+
+    #border-header {
+        width: 100%;
+        align-self: flex-start;
+        margin-bottom: 1rem;
+    }
+
+    #borderCountries button {
+        margin-bottom: 1rem;
+    }
+
+    #backBtnButton {
+        width: 30%;
+        padding: 0.5rem 1.2rem;
+    }
+}
+
+@media screen and (max-width: 360px) {
+    #backBtnButton {
+        width: 40%;
+    }
+}
