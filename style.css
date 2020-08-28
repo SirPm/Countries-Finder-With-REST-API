@@ -96,7 +96,6 @@ header {
     height: 15vh;
     align-items: center;
     justify-content: space-between;
-    /* padding: 0 5rem; */
 }
 
 .my-container {
@@ -122,7 +121,6 @@ header {
 .dark-mode p {
     margin-bottom: 0;
     font-weight: 600;
-    /* height: 2vh; */
     font-size: 1rem;
 }
 
@@ -168,6 +166,7 @@ header {
 select {
     border: none;
     cursor: pointer;
+    background-color: hsl(0, 0%, 100%);
 }
 
 
@@ -270,7 +269,6 @@ select {
 
 #borderCountries {
     display: flex;
-    /* flex-wrap: wrap; */
 }
 
 #borderCountries button {

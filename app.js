@@ -20,7 +20,7 @@ class General {
             data.forEach(function(country) {
                 let bodyHtmlString = `
                     <div class="col-3">
-                        <div class="country-card" id="numericCode" data-code="${country.numericCode}">
+                        <div class="country-card" id="numericCode">
                             <div class="flag-div">
                                 <img src="${country.flag}" id="flag" alt="flag">
                             </div>
@@ -59,14 +59,12 @@ function goToHomePage(e) {
 }
 
 function showRegions() {
-    //console.log(regions.value);
     if(regions.value !== 'default') {
         General.loadCountries(`https://restcountries.eu/rest/v2/region/${regions.value}`);
     }
 }
 
 function showSearchResult() {
-    // console.log(countrySearch.value);
     General.loadCountries(`https://restcountries.eu/rest/v2/name/${countrySearch.value}`);
 }
 
@@ -75,22 +73,11 @@ function showCountryInfo(e) {
     fetch(`https://restcountries.eu/rest/v2/all`)
     .then( (response) => response.json())
     .then( (data) => {
-        let id = document.querySelector('#numericCode');
-        /* Check if the country selected has the class of "country-name" 
-        as I want to use the name in the textContent of that element to compare with the name from the api so that i'm sure that
-        whatever i display is what i clicked on
-        */
         if(e.target.classList.contains('country-card')) {
-            // Loop through the data array and check for the one that has the same country name as the one selected
-            console.log(e.target)
-            
-            //console.log(id.dataset.code); e.target.childNode[1],childNode[0].textContent
-            console.log(e.target.children[1].firstElementChild.textContent)
-            
+            // Loop through the data array and check for the one that has the same country name as the one selected            
             data.forEach(function(country) {
                 // This if statement does the check and displays the one that matches
                 if(e.target.children[1].firstElementChild.textContent === country.name) {
-                    console.log(country);
                     searchAndSelect.style.display = "none";
                     main.innerHTML = "";
                     let bodyHtmlString = `                    
