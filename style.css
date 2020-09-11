@@ -4,6 +4,24 @@
     box-sizing: border-box;
 }
 
+:root {
+    --background: hsl(0, 0%, 96%);
+    --header: white;
+    --form-input: hsl(0, 0%, 100%);
+    --text-color: hsl(0, 0%, 52%);
+    --box-shadows: hsl(0, 0%, 80%);
+    --black-color: black;
+}
+
+.dark-mode-section {
+    --background: hsl(207, 26%, 17%);
+    --header: hsl(200, 15%, 8%);
+    --form-input: hsl(0, 0%, 100%);
+    --text-color: hsl(0, 0%, 52%);
+    --box-shadows: hsl(200, 15%, 8%);
+    --black-color: hsl(0, 0%, 100%);
+}
+
 #main {
     height: 70vh;
     display: flex;
@@ -46,7 +64,7 @@
     position: absolute;
     width: 200px;
     height: 200px;
-    color: black;
+    color: var(--black-color);
     text-align: center;
     line-height: 200px;
     animation: a2 2s linear infinite
@@ -65,7 +83,7 @@
 }
 
 body {
-    background-color: hsl(0, 0%, 96%);
+    background-color: var(--background);
     font-size: 62.5%;
     font-family: 'Nunito Sans', sans-serif;
 }
@@ -91,11 +109,15 @@ p {
 }
 
 header {
-    background-color: white;
+    background-color: var(--header);
     display: flex;
     height: 15vh;
     align-items: center;
     justify-content: space-between;
+}
+
+.header-text h1 {
+    color: var(--black-color);
 }
 
 .my-container {
@@ -116,33 +138,36 @@ header {
     width: 20%;
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
+
 
 .dark-mode p {
     margin-bottom: 0;
     font-weight: 600;
     font-size: 1rem;
+    color: var(--black-color);
 }
 
 .bi-moon {
     margin-right: 10%;
 }
 
-#formSearch {
+.formSearch {
     width: 40%;
     height: 6vh;
-    background-color: hsl(0, 0%, 100%);
+    background-color: var(--form-input);
     display: flex;
     align-items: center;
     padding: 1.4rem;
     border-radius: 0.5rem;
-    box-shadow: 0 0 1rem hsl(0, 0%, 80%);
+    box-shadow: 0 0 1rem var(--box-shadows);
 }
 
-#countrySearch {
-    border: 1px solid hsl(0, 0%, 100%);
-    background-color: hsl(0, 0%, 100%);
-    color: hsl(0, 0%, 52%);
+.countrySearch {
+    border: 1px solid var(--form-input);
+    background-color: var(--form-input);
+    color: var(--text-color);
     width: 100%;
     padding: 0.4rem;
     height: 5vh;
@@ -152,28 +177,28 @@ header {
     margin-right: 5%;
 }
 
-#regionsForm {
+.regionsForm {
     width: 15%;
     height: 6vh;
-    background-color: hsl(0, 0%, 100%);
+    background-color: var(--form-input);
     display: flex;
     align-items: center;
     padding: 1rem;
     border-radius: 0.5rem;
-    box-shadow: 0 0 1rem hsl(0, 0%, 80%);
+    box-shadow: 0 0 1rem var(--box-shadows);
 }
 
 select {
     border: none;
     cursor: pointer;
-    background-color: hsl(0, 0%, 100%);
+    background-color: var(--form-input);
 }
 
 
 /*********************************
     Country's Homepage
 *********************************/
-#flag {
+.flag {
     width: 100%;
     height: 20vh;
     border-top-left-radius: 0.5rem;
@@ -181,14 +206,14 @@ select {
 }
 
 .country-card {
-    border: 1px solid hsl(0, 0%, 100%);
-    background: hsl(0, 0%, 100%);
+    border: 1px solid var(--form-input);
+    background: var(--form-input);
     border-radius: 0.5rem;
     width: 100%;
     margin: auto;
     margin-bottom: 4rem;
     height: 45vh;
-    box-shadow: 0 0 1rem hsl(0, 0%, 80%);
+    box-shadow: 0 0 1rem var(--box-shadows);
     cursor: pointer;
 }
 
@@ -202,13 +227,13 @@ select {
     pointer-events: none;
 }
 
-#population, #region, #capital {
+.population, .region, .capital {
     font-weight: 600;
     font-size: 0.6rem;
 }
 
 .input-text {
-    color: hsl(0, 0%, 52%);
+    color: var(--text-color);
     font-weight: 300;
 }
 
@@ -219,8 +244,8 @@ select {
 }
 
 #backBtnButton {
-    border: 1px solid hsl(0, 0%, 96%);
-    box-shadow: 0 0 1rem hsl(0, 0%, 80%);
+    border: 1px solid var(--box-shadows);
+    box-shadow: 0 0 1rem var(--box-shadows);
     width: 10%;
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
@@ -228,7 +253,7 @@ select {
 }
 
 #backLink {
-    color: black;
+    color: var(--black-color);
     font-size: 0.7rem;
     vertical-align: middle;
 }
@@ -272,7 +297,7 @@ select {
 }
 
 #borderCountries button {
-    border: 1px solid hsl(0, 0%, 80%);
+    border: 1px solid var(--box-shadows);
     padding: 0.1rem 1rem;
     height: 3vh;
     margin-right: 0.4rem;
@@ -288,6 +313,7 @@ select {
     margin: 2rem 0;
     position: relative;
     width: 50%;
+    color: var(--black-color);
 }
 
 .info h2 {

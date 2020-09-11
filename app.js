@@ -2,10 +2,42 @@
 const countryCard = document.querySelector('.country-card');
 const fullDetailsDiv = document.querySelector('.fullDetailsDiv');
 const main = document.getElementById('main');
-const countrySearch = document.getElementById('countrySearch');
-const regions = document.getElementById('regions');
+const countrySearch = document.querySelector('.countrySearch');
+const regions = document.querySelector('.regions');
 const searchAndSelect = document.querySelector('.search-and-select');
 const theBackBtn = document.querySelector('.the-back-btn');
+const darkModeBtn = document.querySelector('.dark-mode');
+
+
+
+// Dark Mode Toggler
+
+let darkMode = localStorage.getItem('darkmode');
+
+const enableDarkMode = () => {
+    localStorage.setItem('darkmode', 'enabled');
+    document.body.classList.add('dark-mode-section');
+    console.log(darkMode)
+}
+
+const disableDarkMode = () => {
+    localStorage.setItem('darkmode', null);
+    document.body.classList.remove('dark-mode-section');
+    console.log(darkMode)
+}
+
+if(darkMode === 'enabled') {
+    enableDarkMode();
+}
+
+darkModeBtn.addEventListener('click', () => {
+    darkMode = localStorage.getItem('darkmode');
+    if(darkMode !== 'enabled') {
+        enableDarkMode();
+    } else {
+        disableDarkMode();
+    }
+})
 
 
 
@@ -20,15 +52,15 @@ class General {
             data.forEach(function(country) {
                 let bodyHtmlString = `
                     <div class="col-3">
-                        <div class="country-card" id="numericCode">
+                        <div class="country-card">
                             <div class="flag-div">
-                                <img src="${country.flag}" id="flag" alt="flag">
+                                <img src="${country.flag}" class="flag" alt="flag">
                             </div>
                             <div class="country-card-info">
                                 <h3 class="country-name">${country.name}</h3>
-                                <p id="population">Population: <span class="input-text">${country.population}</span></p>
-                                <p id="region">Region: <span class="input-text">${country.region}</span></p>
-                                <p id="capital">Capital: <span class="input-text">${country.capital}</span></p>
+                                <p class="population">Population: <span class="input-text">${country.population}</span></p>
+                                <p class="region">Region: <span class="input-text">${country.region}</span></p>
+                                <p class="capital">Capital: <span class="input-text">${country.capital}</span></p>
                             </div>
                         </div>
                     </div>
@@ -83,7 +115,7 @@ function showCountryInfo(e) {
                     let bodyHtmlString = `                    
                         <div id="backBtn">
                             <div id="backBtnButton" class="back-btn">
-                                <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-arrow-left" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-arrow-left" fill="var(--black-color)" xmlns="http://www.w3.org/2000/svg">
                                     <path fill-rule="evenodd" d="M5.854 4.646a.5.5 0 0 1 0 .708L3.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0z"/>
                                     <path fill-rule="evenodd" d="M2.5 8a.5.5 0 0 1 .5-.5h10.5a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
                                 </svg>
