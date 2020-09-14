@@ -1,4 +1,5 @@
 // Selectors
+
 const countryCard = document.querySelector('.country-card');
 const fullDetailsDiv = document.querySelector('.fullDetailsDiv');
 const main = document.getElementById('main');
